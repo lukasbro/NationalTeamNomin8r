@@ -10,11 +10,13 @@ NationalTeamNomin8r is a Python project focused on data analysis to determine th
 
 ## Installation
 1. Clone the repository.
+   ```bash
    git clone https://github.com/your-username/NationalTeamNomin8r.git
    cd NationalTeamNomin8r
-2. Install dependencies.
+2. Get the data from 
     ```bash
-    pip install -r requirements.txt
+    https://www.kaggle.com/datasets/davidcariboo/player-scores
+3. Create a "data" folder and move the csv files there.
 
 ## Usage
 1. Run the main script.
