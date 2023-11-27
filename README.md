@@ -12,6 +12,7 @@ NationalTeamNomin8r is a Python project focused on data analysis to determine th
 1. Clone the repository.
    ```bash
    git clone https://github.com/your-username/NationalTeamNomin8r.git
+   ```bash
    cd NationalTeamNomin8r
 2. Get the data from 
     ```bash
