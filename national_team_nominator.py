@@ -65,32 +65,28 @@ def main():
     script_directory = os.path.dirname(__file__)
     data_folder_path = os.path.join(script_directory, '../Data/Data_national_team_nominator')
 
+    games_df = read_csv_file(data_folder_path, 'games')
     players_df = read_csv_file(data_folder_path, 'players')
-    german_players_df = filter_players(players_df)
-
     appearances_df = read_csv_file(data_folder_path, 'appearances')
+
+    german_players_df = filter_players(players_df)
     player_stats_df = process_appearances(appearances_df)
 
     german_players_df = merge_dataframes(german_players_df, player_stats_df, 'player_id')
-
     fill_nan_values(german_players_df)
-
+    
     german_players_df_filtered = filter_by_minutes_played(german_players_df, 1500)
-
     german_players_df_filtered = calculate_ratios(german_players_df_filtered)
-
     german_players_df_sorted = sort_dataframe(german_players_df_filtered, ['position', 'goals_per_minute'], [True, False])
 
     top_players_df = select_top_players(german_players_df_sorted, 'sub_position', 4)
-
-    print(top_players_df)
-
-    games_df = read_csv_file(data_folder_path, 'games')
+    print(top_players_df[['position', 'sub_position', 'first_name', 'last_name', 'goals', 'assists', 'goals_per_minute', 'assists_per_minute', 'cards_per_minute', 'minutes_played']])
+    
     merged_data = pd.merge(players_df, appearances_df, on='player_id')
     merged_data = pd.merge(merged_data, games_df, on='game_id')
 
     top_goalkeepers = process_goalkeeper_data(merged_data)
-    print(top_goalkeepers)
+    print(top_goalkeepers[['sub_position', 'player_name', 'sum_goals', 'sum_assists', 'sum_away_goals', 'lose_goals_per_minute', 'sum_minutes_played']])
 
 if __name__ == "__main__":
     main()
