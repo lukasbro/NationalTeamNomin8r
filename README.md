@@ -23,7 +23,7 @@ NationalTeamNomin8r is a Python project focused on data analysis to determine th
 2. Follow the on-screen instructions to analyze and nominate players.
 
 ## Contributing
-Contributions are welcome! Please follow our contribution guidelines.
+Contributions are welcome!
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
