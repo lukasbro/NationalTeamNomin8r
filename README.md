@@ -3,6 +3,8 @@
 ## Overview
 NationalTeamNomin8r is a Python project focused on data analysis to determine the optimal selection of German soccer players for the national team. In this project, various metrics are analyzed to enable informed decision making for the nomination of national team players. The aim is to provide valuable insights and recommendations on the most promising and effective players.
 
+*currently working on Version 1.0*
+
 ## Features
 - Player performance analysis
 - Statistical metrics evaluation
